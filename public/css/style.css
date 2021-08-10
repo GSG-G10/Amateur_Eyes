@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+img{
+    max-width: 100%;
+}
+/* logo */
+#logo{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+}
+.sidebar a {
+    display: block;
+}
+main.amture-body {
+    display: flex;
+}
+.sidebar {
+    width: 13%;
+    position: fixed;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-wrapper {
+   display: flex;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+}
+.logo {
+    font-size: 3.5rem;
+}
+#profile_image{
+      border-radius: 5rem;
+    width: 45px;
+    height: 45px;  
+}
+.sidebar-nav ul li a{
+    color: #2828289e;
+    font-size: 2rem;
+}
