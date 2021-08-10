@@ -2,8 +2,7 @@ name: amateure-eyes-test
 on: 
   push:
     branches:[master]
-    pull_request:
-      branches:[elham]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
