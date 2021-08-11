@@ -16,6 +16,16 @@ app.use(express.static(__dirname + '/public'));
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'views','index.html'));
 })
+// handle error
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname,  'views', '404.html'));
+});
+
+app.use((err, req, res, next) => {
+  res.status(500).sendFile(path.join(__dirname, 'views', '500.html'));
+});
+
+
 app.listen(port, () => {
     console.log('Server listening on port ' + port);
 });
