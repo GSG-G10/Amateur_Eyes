@@ -13,6 +13,18 @@ app.use(express.urlencoded({ extended: false }))
 // set static files location
 app.use(express.static(__dirname + '/public'));
 // this will improve when 
+app.get("/profile/:userName",(req,res)=>{
+  const userName = req.params.userName;
+  //fetch data from API About this user
+  res.send(`Hello ${userName} with your profile`)
+//   res.sendFile(path.join(__dirname,'views','profile.html'));
+})
+// app.get("/profile",(req,res)=>{
+//   const userName = req.params.userName;
+//   //fetch data from API About this user
+//   res.send(`welcome with your profile`)
+// //   res.sendFile(path.join(__dirname,'views','profile.html'));
+// })
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'views','index.html'));
 })
