@@ -1,4 +1,5 @@
 const requst = require('supertest');
+const app = require('../server');
 test('Route / should return status 200 ', (done) => {
   requst(app)
     .get('/')
