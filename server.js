@@ -19,13 +19,9 @@ app.get("/profile/:userName",(req,res)=>{
   res.send(`Hello ${userName} with your profile`)
 //   res.sendFile(path.join(__dirname,'views','profile.html'));
 })
-// app.get("/profile",(req,res)=>{
-//   const userName = req.params.userName;
-//   //fetch data from API About this user
-//   res.send(`welcome with your profile`)
-// //   res.sendFile(path.join(__dirname,'views','profile.html'));
-// })
+
 app.get('/',(req,res)=>{
+  // check if user is logged in
     res.sendFile(path.join(__dirname,'views','index.html'));
 })
 // handle error
