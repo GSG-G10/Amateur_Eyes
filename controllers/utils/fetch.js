@@ -6,7 +6,6 @@ const User_Data = (userName) => `https://api.unsplash.com/users/${userName}?clie
 
 const fetchData = (req, res, next) => {
     // you check if uesr will be you or not :) 
-    console.log("kkkk")
     fetch(User_Data(req.params.userName))
     .then(res => res.json())
     .then(json =>{
