@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const profileRouter = require('./profile');
+const authController = require('./signIn');
 router.use('/profile', profileRouter);
-router.get('/', (req, res) => {
-     res.sendFile(path.join(__dirname,"..",'views','index.html'));
-}
-);
+router.use('/auth',authController);
+
 module.exports = router;
    
