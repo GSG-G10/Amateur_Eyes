@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const compression = require('compression');
+const profileRouter = require('./routers/profile');
  const {fetchData}= require('./controllers/utils');
 // disable powered by express header
 app.disable('x-powered-by');
@@ -14,17 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 // set static files location
 app.use(express.static(__dirname + '/public'));
 // this will improve when 
-app.get("/profile/:userName",fetchData,(req,res)=>{
-  const userName = req.params.userName;
-// get data which pass from middleware
-     console.log( req.userData,"Hello data")
-     
-     res.json(req.userData)
-  //fetch data from API About this user
-  // res.send(`Hello ${userName} with your profile`)
-//   res.sendFile(path.join(__dirname,'views','profile.html'));
-})
-
+app.use("/profile", profileRouter)
 app.get('/',(req,res)=>{
   // check if user is logged in
     res.sendFile(path.join(__dirname,'views','index.html'));
