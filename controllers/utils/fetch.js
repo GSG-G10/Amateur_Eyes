@@ -13,7 +13,7 @@ const fetchData = (req, res, next) => {
             req.userData = json;
             return next();
     }).catch(err => {
-        return err;
+        return "error";
     }
     );
 }

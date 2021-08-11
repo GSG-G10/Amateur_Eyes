@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const compression = require('compression');
 const routes = require('./routers');
-//  const {fetchData}= require('./controllers/utils');
 // disable powered by express header
 app.disable('x-powered-by');
 const port = process.env.PORT || 5000;
@@ -30,3 +29,4 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
     console.log('Server listening on port ' + port);
 });
+module.exports = app;
