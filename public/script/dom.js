@@ -1,3 +1,4 @@
+const friendRow = document.querySelector('.u-friend--row');
 const createCard = (name, numberFollowers,totalLike, image, id,userName) => {
     const card = document.createElement('a');
     card.classList.add('friend-card');
@@ -39,10 +40,18 @@ const createCard = (name, numberFollowers,totalLike, image, id,userName) => {
     //append
     cardLike.appendChild(cardLikeP);
     //append
+    //create button 
+    const button = document.createElement('button');
+    button.classList.add("btn");
+    button.classList.add("btn-follow");
+    button.textContent = "Follow";
+    
     cardInfo.appendChild(cardName);
     cardInfo.appendChild(cardFollower);
     cardInfo.appendChild(cardLike);
     card.appendChild(cardImage);
     card.appendChild(cardInfo);
-    return card;
+    card.appendChild(button);
+    friendRow.appendChild(card);
+    return ;
 }
