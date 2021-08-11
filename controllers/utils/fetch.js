@@ -2,17 +2,20 @@
 const fetch = require('node-fetch');
 require('env2')('.env');
 const client_id = process.env.UNSPLASH_CLIENT_ID;
-const User_Data =(userName)=> `https://api.unsplash.com/users/${userName}?client_id=${client_id}`;
+const User_Data = (userName) => `https://api.unsplash.com/users/${userName}?client_id=${client_id}`;
 
-const fetchData = (req,res,next) => {
-    console.log('fetchData')
+const fetchData = (req, res, next) => {
+    // you check if uesr will be you or not :) 
+    console.log("kkkk")
     fetch(User_Data(req.params.userName))
     .then(res => res.json())
     .then(json =>{
         //to passing variable to another middleware
-        req.userData = json;
-    })
-    .catch(err => console.log(err))
-    next();
+            req.userData = json;
+            return next();
+    }).catch(err => {
+        return err;
+    }
+    );
 }
 module.exports = fetchData;

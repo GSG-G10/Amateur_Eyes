@@ -16,8 +16,12 @@ app.use(express.static(__dirname + '/public'));
 // this will improve when 
 app.get("/profile/:userName",fetchData,(req,res)=>{
   const userName = req.params.userName;
+// get data which pass from middleware
+     console.log( req.userData,"Hello data")
+     
+     res.json(req.userData)
   //fetch data from API About this user
-  res.send(`Hello ${userName} with your profile`)
+  // res.send(`Hello ${userName} with your profile`)
 //   res.sendFile(path.join(__dirname,'views','profile.html'));
 })
 
